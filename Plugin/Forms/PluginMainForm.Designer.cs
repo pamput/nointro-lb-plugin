@@ -37,7 +37,8 @@
             this.openRomForMD5Dialog = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.processSnes = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.ProgressTest = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -45,8 +46,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(12, 606);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(863, 23);
@@ -54,7 +54,7 @@
             // 
             // loadDATs
             // 
-            this.loadDATs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadDATs.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loadDATs.Location = new System.Drawing.Point(800, 12);
             this.loadDATs.Name = "loadDATs";
             this.loadDATs.Size = new System.Drawing.Size(75, 23);
@@ -65,9 +65,7 @@
             // 
             // checkedListBox1
             // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
             this.checkedListBox1.Name = "checkedListBox1";
@@ -77,9 +75,7 @@
             // 
             // noIntroMapListBox
             // 
-            this.noIntroMapListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noIntroMapListBox.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.noIntroMapListBox.FormattingEnabled = true;
             this.noIntroMapListBox.Location = new System.Drawing.Point(3, 0);
             this.noIntroMapListBox.Name = "noIntroMapListBox";
@@ -92,7 +88,7 @@
             // 
             // md5CheckButton
             // 
-            this.md5CheckButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.md5CheckButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.md5CheckButton.Location = new System.Drawing.Point(800, 41);
             this.md5CheckButton.Name = "md5CheckButton";
             this.md5CheckButton.Size = new System.Drawing.Size(75, 23);
@@ -107,9 +103,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(12, 12);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -126,7 +120,7 @@
             // 
             // processSnes
             // 
-            this.processSnes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.processSnes.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.processSnes.Location = new System.Drawing.Point(800, 70);
             this.processSnes.Name = "processSnes";
             this.processSnes.Size = new System.Drawing.Size(75, 23);
@@ -135,11 +129,22 @@
             this.processSnes.UseVisualStyleBackColor = true;
             this.processSnes.Click += new System.EventHandler(this.processSnes_Click);
             // 
-            // NoIntroLBUI
+            // ProgressTest
+            // 
+            this.ProgressTest.Location = new System.Drawing.Point(800, 99);
+            this.ProgressTest.Name = "ProgressTest";
+            this.ProgressTest.Size = new System.Drawing.Size(75, 23);
+            this.ProgressTest.TabIndex = 8;
+            this.ProgressTest.Text = "Progress";
+            this.ProgressTest.UseVisualStyleBackColor = true;
+            this.ProgressTest.Click += new System.EventHandler(this.progressTest_Click);
+            // 
+            // PluginUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 641);
+            this.Controls.Add(this.ProgressTest);
             this.Controls.Add(this.processSnes);
             this.Controls.Add(this.md5CheckButton);
             this.Controls.Add(this.loadDATs);
@@ -150,11 +155,12 @@
             this.Load += new System.EventHandler(this.NoIntroLBUI_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.Button ProgressTest;
 
         #endregion
 

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csproj", "{BE56C4DB-F460-4471-85FC-8C73680A2836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExecutable", "TestExecutable\TestExecutable.csproj", "{D63D2BC6-CBA9-44B0-92C8-A2E9008DC37F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE56C4DB-F460-4471-85FC-8C73680A2836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE56C4DB-F460-4471-85FC-8C73680A2836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE56C4DB-F460-4471-85FC-8C73680A2836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE56C4DB-F460-4471-85FC-8C73680A2836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63D2BC6-CBA9-44B0-92C8-A2E9008DC37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63D2BC6-CBA9-44B0-92C8-A2E9008DC37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63D2BC6-CBA9-44B0-92C8-A2E9008DC37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63D2BC6-CBA9-44B0-92C8-A2E9008DC37F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

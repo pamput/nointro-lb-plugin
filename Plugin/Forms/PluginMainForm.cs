@@ -9,132 +9,57 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using Unbroken.LaunchBox.Plugins;
 
 namespace Pamput.NoIntroLBPlugin
 {
     public partial class PluginForm : Form
     {
-        private NoIntroLBProcessor Processor;
-
         public PluginForm()
         {
             InitializeComponent();
+
+            LoadPlatforms();
+            LoadImportedPlatforms();
         }
 
-        private void loadDATs_Click(object sender, EventArgs e)
+        
+
+        private void processButton_Click(object sender, EventArgs e)
         {
-            openDATFileDialog.ShowDialog();
+            var selectedPlatform = platformToProcessSelectBox.SelectedItem;
 
-            Processor = new NoIntroLBProcessor("Super Nintendo Entertainment System", openDATFileDialog.FileName);
-            checkedListBox1.Items.Add(openDATFileDialog.FileName);
-
-            noIntroMapListBox.Items.AddRange(Processor.NameToNoIntroMap.Select(game => game.Key).ToArray());
-        }
-
-        private void noIntroMapList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void md5CheckButton_Click(object sender, EventArgs e)
-        {
-            if (Processor == null)
+            if (selectedPlatform == null)
             {
-                MessageBox.Show("No dat file loaded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a platform to process", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            openRomForMD5Dialog.ShowDialog();
-
-            string md5 = RomIOHelper.GetMD5(openRomForMD5Dialog.FileName);
-
-            if (Processor.Md5ToNoIntroMap.ContainsKey(md5))
-            {
-                string game = Processor.Md5ToNoIntroMap[md5].Attributes["name"].Value;
-                MessageBox.Show(md5, game, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(md5);
-            }
-
-
-            Clipboard.SetText(md5);
-        }
-
-        private void NoIntroLBUI_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void processSnes_Click(object sender, EventArgs e)
-        {
-            if (Processor == null)
-            {
-                MessageBox.Show("No dat file loaded", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
+            var platform = selectedPlatform.ToString();
+            
             Progress<ProcessProgress> progress = new Progress<ProcessProgress>();
             ProcessProgressForm form = new ProcessProgressForm(progress);
+            NoIntroLBProcessor processor = new NoIntroLBProcessor(platform, DatHelper.GetPlatformDatFile(platform));
 
-            Task.Run(() => { Processor.Process(progress); });
+            Task.Run(() => { processor.Process(progress); });
 
             form.Show(this);
         }
 
-        private void ProgressTest_Click(object sender, EventArgs e)
+        private void importDatButton_Click(object sender, EventArgs e)
         {
-            Progress<ProcessProgress> progress = new Progress<ProcessProgress>();
-            ProcessProgressForm form = new ProcessProgressForm(progress);
-            ProcessProgress state = new ProcessProgress();
+            var selectedPlatform = importPlatformComboBox.SelectedItem;
 
-            Task.Run(() =>
+            if (selectedPlatform == null)
             {
-                IProgress<ProcessProgress> pr = progress;
+                MessageBox.Show("Select a platform first from the combo box", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
 
-                state.TotalGames = 10;
-                pr.Report(state);
-
-                for (int i = 1; i <= 10; i++)
-                {
-                    state.CurrentGame = $"Game {i}";
-                    pr.Report(state);
-                    System.Threading.Thread.Sleep(1000);
-
-                    state.ProcessedGames = i;
-                    pr.Report(state);
-                }
-
-                state.GamesScanFinished = true;
-                pr.Report(state);
-
-                state.TotalClones = 10;
-                pr.Report(state);
-
-                for (int i = 1; i <= 10; i++)
-                {
-                    state.ProcessedClones = i;
-                    pr.Report(state);
-                    System.Threading.Thread.Sleep(1000);
-
-                    state.CurrentGame = $"Game {i}";
-                    pr.Report(state);
-                }
-
-                state.CloneProcessFinished = true;
-                pr.Report(state);
-            });
-
-            form.Show(this);
-        }
-
-        private void datsFolderButton_Click(object sender, EventArgs e)
-        {
             openDATFileDialog.ShowDialog();
-            var datFile = DatHelper.ImportDat(openDATFileDialog.FileName, "Super Nintendo Entertainment System");
+            DatHelper.ImportDat(openDATFileDialog.FileName, selectedPlatform.ToString());
+            LoadImportedPlatforms();
         }
     }
 }

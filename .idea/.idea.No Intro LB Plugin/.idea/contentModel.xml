@@ -12,6 +12,7 @@
         <e p="Forms" t="Include">
           <e p="PluginMainForm.cs" t="Include" />
           <e p="PluginMainForm.Designer.cs" t="Include" />
+          <e p="PluginMainForm.Process.cs" t="Include" />
           <e p="PluginMainForm.resx" t="Include" />
           <e p="ProcessProgressForm.cs" t="Include" />
           <e p="ProcessProgressForm.Designer.cs" t="Include" />

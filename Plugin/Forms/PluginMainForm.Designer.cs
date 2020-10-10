@@ -28,164 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.loadDATs = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.noIntroMapListBox = new System.Windows.Forms.ListBox();
             this.openDATFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.md5CheckButton = new System.Windows.Forms.Button();
             this.openRomForMD5Dialog = new System.Windows.Forms.OpenFileDialog();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.processSnes = new System.Windows.Forms.Button();
-            this.ProgressTest = new System.Windows.Forms.Button();
-            this.datsFolderButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.processSelectedPlatformsButton = new System.Windows.Forms.Button();
+            this.importPlatformComboBox = new System.Windows.Forms.ComboBox();
+            this.importDatGroupBox = new System.Windows.Forms.GroupBox();
+            this.importDatButton = new System.Windows.Forms.Button();
+            this.processGamesGroupBox = new System.Windows.Forms.GroupBox();
+            this.platformToProcessSelectBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.importDatGroupBox.SuspendLayout();
+            this.processGamesGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(12, 606);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(863, 23);
-            this.progressBar1.TabIndex = 0;
-            // 
-            // loadDATs
-            // 
-            this.loadDATs.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadDATs.Location = new System.Drawing.Point(800, 12);
-            this.loadDATs.Name = "loadDATs";
-            this.loadDATs.Size = new System.Drawing.Size(75, 23);
-            this.loadDATs.TabIndex = 1;
-            this.loadDATs.Text = "Load DATs";
-            this.loadDATs.UseVisualStyleBackColor = true;
-            this.loadDATs.Click += new System.EventHandler(this.loadDATs_Click);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(259, 574);
-            this.checkedListBox1.TabIndex = 3;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // noIntroMapListBox
-            // 
-            this.noIntroMapListBox.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.noIntroMapListBox.FormattingEnabled = true;
-            this.noIntroMapListBox.Location = new System.Drawing.Point(3, 0);
-            this.noIntroMapListBox.Name = "noIntroMapListBox";
-            this.noIntroMapListBox.Size = new System.Drawing.Size(507, 576);
-            this.noIntroMapListBox.TabIndex = 4;
             // 
             // openDATFileDialog
             // 
             this.openDATFileDialog.FileName = "games.dat";
             // 
-            // md5CheckButton
-            // 
-            this.md5CheckButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.md5CheckButton.Location = new System.Drawing.Point(800, 41);
-            this.md5CheckButton.Name = "md5CheckButton";
-            this.md5CheckButton.Size = new System.Drawing.Size(75, 23);
-            this.md5CheckButton.TabIndex = 5;
-            this.md5CheckButton.Text = "Check MD5";
-            this.md5CheckButton.UseVisualStyleBackColor = true;
-            this.md5CheckButton.Click += new System.EventHandler(this.md5CheckButton_Click);
-            // 
             // openRomForMD5Dialog
             // 
             this.openRomForMD5Dialog.FileName = "openFileDialog1";
             // 
-            // splitContainer1
+            // processSelectedPlatformsButton
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(12, 12);
-            this.splitContainer1.Name = "splitContainer1";
+            this.processSelectedPlatformsButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.processSelectedPlatformsButton.Location = new System.Drawing.Point(6, 75);
+            this.processSelectedPlatformsButton.Name = "processSelectedPlatformsButton";
+            this.processSelectedPlatformsButton.Size = new System.Drawing.Size(478, 23);
+            this.processSelectedPlatformsButton.TabIndex = 7;
+            this.processSelectedPlatformsButton.Text = "Process selected platform";
+            this.processSelectedPlatformsButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1.Panel1
+            // importPlatformComboBox
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.checkedListBox1);
+            this.importPlatformComboBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.importPlatformComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.importPlatformComboBox.FormattingEnabled = true;
+            this.importPlatformComboBox.Location = new System.Drawing.Point(6, 19);
+            this.importPlatformComboBox.Name = "importPlatformComboBox";
+            this.importPlatformComboBox.Size = new System.Drawing.Size(478, 21);
+            this.importPlatformComboBox.TabIndex = 10;
             // 
-            // splitContainer1.Panel2
+            // importDatGroupBox
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.noIntroMapListBox);
-            this.splitContainer1.Size = new System.Drawing.Size(782, 588);
-            this.splitContainer1.SplitterDistance = 265;
-            this.splitContainer1.TabIndex = 6;
+            this.importDatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.importDatGroupBox.Controls.Add(this.importDatButton);
+            this.importDatGroupBox.Controls.Add(this.importPlatformComboBox);
+            this.importDatGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.importDatGroupBox.Name = "importDatGroupBox";
+            this.importDatGroupBox.Size = new System.Drawing.Size(490, 81);
+            this.importDatGroupBox.TabIndex = 11;
+            this.importDatGroupBox.TabStop = false;
+            this.importDatGroupBox.Text = "Import DAT file";
             // 
-            // processSnes
+            // importDatButton
             // 
-            this.processSnes.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.processSnes.Location = new System.Drawing.Point(800, 70);
-            this.processSnes.Name = "processSnes";
-            this.processSnes.Size = new System.Drawing.Size(75, 23);
-            this.processSnes.TabIndex = 7;
-            this.processSnes.Text = "Process";
-            this.processSnes.UseVisualStyleBackColor = true;
-            this.processSnes.Click += new System.EventHandler(this.processSnes_Click);
+            this.importDatButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.importDatButton.Location = new System.Drawing.Point(6, 46);
+            this.importDatButton.Name = "importDatButton";
+            this.importDatButton.Size = new System.Drawing.Size(478, 23);
+            this.importDatButton.TabIndex = 11;
+            this.importDatButton.Text = "Import DAT for selected platform";
+            this.importDatButton.UseVisualStyleBackColor = true;
+            this.importDatButton.Click += new System.EventHandler(this.importDatButton_Click);
             // 
-            // ProgressTest
+            // processGamesGroupBox
             // 
-            this.ProgressTest.Location = new System.Drawing.Point(800, 99);
-            this.ProgressTest.Name = "ProgressTest";
-            this.ProgressTest.Size = new System.Drawing.Size(75, 23);
-            this.ProgressTest.TabIndex = 8;
-            this.ProgressTest.Text = "Progress";
-            this.ProgressTest.UseVisualStyleBackColor = true;
-            this.ProgressTest.Click += new System.EventHandler(this.ProgressTest_Click);
+            this.processGamesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.processGamesGroupBox.Controls.Add(this.platformToProcessSelectBox);
+            this.processGamesGroupBox.Controls.Add(this.label1);
+            this.processGamesGroupBox.Controls.Add(this.processSelectedPlatformsButton);
+            this.processGamesGroupBox.Location = new System.Drawing.Point(12, 99);
+            this.processGamesGroupBox.Name = "processGamesGroupBox";
+            this.processGamesGroupBox.Size = new System.Drawing.Size(490, 109);
+            this.processGamesGroupBox.TabIndex = 12;
+            this.processGamesGroupBox.TabStop = false;
+            this.processGamesGroupBox.Text = "Process P/C";
             // 
-            // datsFolderButton
+            // platformToProcessSelectBox
             // 
-            this.datsFolderButton.Location = new System.Drawing.Point(800, 128);
-            this.datsFolderButton.Name = "datsFolderButton";
-            this.datsFolderButton.Size = new System.Drawing.Size(75, 23);
-            this.datsFolderButton.TabIndex = 9;
-            this.datsFolderButton.Text = "DATs Folder";
-            this.datsFolderButton.UseVisualStyleBackColor = true;
-            this.datsFolderButton.Click += new System.EventHandler(this.datsFolderButton_Click);
+            this.platformToProcessSelectBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.platformToProcessSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.platformToProcessSelectBox.FormattingEnabled = true;
+            this.platformToProcessSelectBox.Location = new System.Drawing.Point(6, 48);
+            this.platformToProcessSelectBox.Name = "platformToProcessSelectBox";
+            this.platformToProcessSelectBox.Size = new System.Drawing.Size(478, 21);
+            this.platformToProcessSelectBox.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(478, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Select the platforms to process:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // PluginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 641);
-            this.Controls.Add(this.datsFolderButton);
-            this.Controls.Add(this.ProgressTest);
-            this.Controls.Add(this.processSnes);
-            this.Controls.Add(this.md5CheckButton);
-            this.Controls.Add(this.loadDATs);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(514, 410);
+            this.Controls.Add(this.processGamesGroupBox);
+            this.Controls.Add(this.importDatGroupBox);
             this.Name = "PluginForm";
             this.Text = "No-Intro P/C";
-            this.Load += new System.EventHandler(this.NoIntroLBUI_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.importDatGroupBox.ResumeLayout(false);
+            this.processGamesGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button datsFolderButton;
+        private System.Windows.Forms.ComboBox platformToProcessSelectBox;
 
-        private System.Windows.Forms.Button ProgressTest;
+        private System.Windows.Forms.ComboBox importPlatformComboBox;
+
+        private System.Windows.Forms.Button importDatButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox processGamesGroupBox;
+        private System.Windows.Forms.Button processSelectedPlatformsButton;
+
+        private System.Windows.Forms.GroupBox importDatGroupBox;
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button loadDATs;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ListBox noIntroMapListBox;
         private System.Windows.Forms.OpenFileDialog openDATFileDialog;
-        private System.Windows.Forms.Button md5CheckButton;
         private System.Windows.Forms.OpenFileDialog openRomForMD5Dialog;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button processSnes;
     }
 }

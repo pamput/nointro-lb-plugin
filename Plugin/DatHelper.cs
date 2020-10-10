@@ -57,7 +57,7 @@ namespace Pamput.NoIntroLBPlugin
             }
 
             return GetDatFiles()
-                .Where(path => Path.GetFileNameWithoutExtension(path).Equals(platform))
+                .Single(path => Path.GetFileNameWithoutExtension(path).Equals(platform))
                 .ToString();
         }
 

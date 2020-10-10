@@ -44,14 +44,14 @@ namespace Pamput.NoIntroLBPlugin
             this.gamesProgress.Location = new System.Drawing.Point(12, 34);
             this.gamesProgress.Maximum = 10;
             this.gamesProgress.Name = "gamesProgress";
-            this.gamesProgress.Size = new System.Drawing.Size(588, 23);
+            this.gamesProgress.Size = new System.Drawing.Size(592, 23);
             this.gamesProgress.Step = 1;
             this.gamesProgress.TabIndex = 10;
             // 
             // currentGameLabel
             // 
             this.currentGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.currentGameLabel.Location = new System.Drawing.Point(12, 70);
+            this.currentGameLabel.Location = new System.Drawing.Point(12, 90);
             this.currentGameLabel.Name = "currentGameLabel";
             this.currentGameLabel.Size = new System.Drawing.Size(81, 23);
             this.currentGameLabel.TabIndex = 3;
@@ -69,7 +69,7 @@ namespace Pamput.NoIntroLBPlugin
             // totalProcessed
             // 
             this.totalProcessed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.totalProcessed.Location = new System.Drawing.Point(428, 8);
+            this.totalProcessed.Location = new System.Drawing.Point(430, 8);
             this.totalProcessed.Name = "totalProcessed";
             this.totalProcessed.Size = new System.Drawing.Size(169, 23);
             this.totalProcessed.TabIndex = 14;
@@ -79,7 +79,7 @@ namespace Pamput.NoIntroLBPlugin
             // currentGame
             // 
             this.currentGame.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.currentGame.Location = new System.Drawing.Point(78, 70);
+            this.currentGame.Location = new System.Drawing.Point(78, 90);
             this.currentGame.Name = "currentGame";
             this.currentGame.Size = new System.Drawing.Size(523, 23);
             this.currentGame.TabIndex = 15;
@@ -89,7 +89,7 @@ namespace Pamput.NoIntroLBPlugin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 116);
+            this.ClientSize = new System.Drawing.Size(617, 136);
             this.ControlBox = false;
             this.Controls.Add(this.currentGame);
             this.Controls.Add(this.totalProcessed);

@@ -52,6 +52,9 @@
         <Compile Include="DatHelper.cs" />
         <Compile Include="Forms\PluginMainForm.cs" />
         <Compile Include="Forms\PluginMainForm.Designer.cs" />
+        <Compile Include="Forms\PluginMainForm.Process.cs">
+          <DependentUpon>PluginMainForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="Forms\ProcessProgressForm.cs">
           <SubType>Form</SubType>
         </Compile>

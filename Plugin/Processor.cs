@@ -78,7 +78,7 @@ namespace Pamput.NoIntroLBPlugin
 
                     if (niGame == null)
                     {
-                        result.Skipped.Add(Tuple.Create(path, String.Format("md5 ({0}) doesn't match any entry", md5)));
+                        result.Skipped.Add(Tuple.Create(path, $"md5 ({md5}) doesn't match any entry"));
                         continue;
                     }
 
@@ -123,7 +123,7 @@ namespace Pamput.NoIntroLBPlugin
                 IAdditionalApplication additionalApplication = parent.AddNewAdditionalApplication();
 
                 additionalApplication.ApplicationPath = clone.ApplicationPath;
-                additionalApplication.Name = cloneName;
+                additionalApplication.Name = $@"Play {cloneName}";
 
                 state.ProcessedClones++;
                 Report(progress, state);

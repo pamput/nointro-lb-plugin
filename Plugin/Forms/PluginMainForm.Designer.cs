@@ -137,7 +137,7 @@
             this.ProgressTest.TabIndex = 8;
             this.ProgressTest.Text = "Progress";
             this.ProgressTest.UseVisualStyleBackColor = true;
-            this.ProgressTest.Click += new System.EventHandler(this.progressTest_Click);
+            this.ProgressTest.Click += new System.EventHandler(this.ProgressTest_Click);
             // 
             // PluginUI
             // 

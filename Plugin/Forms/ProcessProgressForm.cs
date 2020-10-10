@@ -13,7 +13,6 @@ namespace Pamput.NoIntroLBPlugin
             _progress.ProgressChanged += (s, e) => { UpdateProgress(e); };
 
             InitializeComponent();
-
         }
 
         private void UpdateProgress(ProcessProgress e)
@@ -24,19 +23,22 @@ namespace Pamput.NoIntroLBPlugin
                 return;
             }
 
-            partProgress.Value = !e.GamesScanFinished ? 1 : 2;
-            currentGameLabel.Text = e.CurrentGame;
-
             if (!e.GamesScanFinished)
             {
+                stepText.Text = "Looking for clones...";
+                totalProcessed.Text = $@"({e.ProcessedGames}/{e.TotalGames})";
                 gamesProgress.Maximum = e.TotalGames;
                 gamesProgress.Value = e.ProcessedGames;
             }
             else
             {
+                stepText.Text = "Processing clones...";
+                totalProcessed.Text = $@"({e.ProcessedClones}/{e.TotalClones})";
                 gamesProgress.Maximum = e.TotalClones;
                 gamesProgress.Value = e.ProcessedClones;
             }
+
+            currentGame.Text = e.CurrentGame;
         }
     }
 }

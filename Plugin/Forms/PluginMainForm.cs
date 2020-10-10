@@ -28,14 +28,7 @@ namespace Pamput.NoIntroLBPlugin
             Processor = new NoIntroLBProcessor("Super Nintendo Entertainment System", openDATFileDialog.FileName);
             checkedListBox1.Items.Add(openDATFileDialog.FileName);
 
-            List<string> rows = new List<string>();
-
-            foreach (KeyValuePair<string, XmlNode> game in Processor.NameToNoIntroMap)
-            {
-                rows.Add(game.Key);
-            }
-
-            this.noIntroMapListBox.Items.AddRange(rows.ToArray());
+            noIntroMapListBox.Items.AddRange(Processor.NameToNoIntroMap.Select(game => game.Key).ToArray());
         }
 
         private void noIntroMapList_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,15 +77,19 @@ namespace Pamput.NoIntroLBPlugin
                 return;
             }
 
-            Processor.Process();
+            Progress<ProcessProgress> progress = new Progress<ProcessProgress>();
+            ProcessProgressForm form = new ProcessProgressForm(progress);
+
+            Task.Run(() => { Processor.Process(progress); });
+
+            form.Show(this);
         }
 
-        private void progressTest_Click(object sender, EventArgs e)
+        private void ProgressTest_Click(object sender, EventArgs e)
         {
             Progress<ProcessProgress> progress = new Progress<ProcessProgress>();
             ProcessProgressForm form = new ProcessProgressForm(progress);
             ProcessProgress state = new ProcessProgress();
-            
 
             Task.Run(() =>
             {
@@ -106,7 +103,7 @@ namespace Pamput.NoIntroLBPlugin
                     state.CurrentGame = $"Game {i}";
                     pr.Report(state);
                     System.Threading.Thread.Sleep(1000);
-                    
+
                     state.ProcessedGames = i;
                     pr.Report(state);
                 }
@@ -122,7 +119,7 @@ namespace Pamput.NoIntroLBPlugin
                     state.ProcessedClones = i;
                     pr.Report(state);
                     System.Threading.Thread.Sleep(1000);
-                    
+
                     state.CurrentGame = $"Game {i}";
                     pr.Report(state);
                 }
@@ -130,7 +127,7 @@ namespace Pamput.NoIntroLBPlugin
                 state.CloneProcessFinished = true;
                 pr.Report(state);
             });
-            
+
             form.Show(this);
         }
     }

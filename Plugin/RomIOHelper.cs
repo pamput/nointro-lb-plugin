@@ -13,7 +13,7 @@ namespace Pamput.NoIntroLBPlugin
     {
         public static string GetMD5(string filename)
         {
-            if (filename.EndsWith(".zip"))
+            if (Path.GetExtension(filename).ToLower().Equals(".zip"))
             {
                 return GetZipMD5(filename);
             }
@@ -39,7 +39,7 @@ namespace Pamput.NoIntroLBPlugin
         {
             using (FileStream zipToOpen = new FileStream(filename, FileMode.Open))
             {
-                using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update))
+                using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Read))
                 {
                     if (archive.Entries.Count() > 1)
                     {

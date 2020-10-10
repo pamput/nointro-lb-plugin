@@ -1,6 +1,6 @@
 ﻿namespace Pamput.NoIntroLBPlugin
 {
-    partial class PluginUI
+    partial class PluginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.processSnes = new System.Windows.Forms.Button();
             this.ProgressTest = new System.Windows.Forms.Button();
+            this.datsFolderButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -139,18 +140,29 @@
             this.ProgressTest.UseVisualStyleBackColor = true;
             this.ProgressTest.Click += new System.EventHandler(this.ProgressTest_Click);
             // 
-            // PluginUI
+            // datsFolderButton
+            // 
+            this.datsFolderButton.Location = new System.Drawing.Point(800, 128);
+            this.datsFolderButton.Name = "datsFolderButton";
+            this.datsFolderButton.Size = new System.Drawing.Size(75, 23);
+            this.datsFolderButton.TabIndex = 9;
+            this.datsFolderButton.Text = "DATs Folder";
+            this.datsFolderButton.UseVisualStyleBackColor = true;
+            this.datsFolderButton.Click += new System.EventHandler(this.datsFolderButton_Click);
+            // 
+            // PluginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 641);
+            this.Controls.Add(this.datsFolderButton);
             this.Controls.Add(this.ProgressTest);
             this.Controls.Add(this.processSnes);
             this.Controls.Add(this.md5CheckButton);
             this.Controls.Add(this.loadDATs);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "PluginUI";
+            this.Name = "PluginForm";
             this.Text = "No-Intro P/C";
             this.Load += new System.EventHandler(this.NoIntroLBUI_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -159,6 +171,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button datsFolderButton;
 
         private System.Windows.Forms.Button ProgressTest;
 

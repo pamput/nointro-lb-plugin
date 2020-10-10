@@ -23,8 +23,8 @@ namespace Pamput.NoIntroLBPlugin
 
         public void OnSelected()
         {
-            PluginUI pluginUi = new PluginUI();
-            pluginUi.Show();
+            PluginForm pluginForm = new PluginForm();
+            pluginForm.Show();
         }
     }
 }

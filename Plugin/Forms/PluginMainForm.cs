@@ -12,11 +12,11 @@ using System.IO;
 
 namespace Pamput.NoIntroLBPlugin
 {
-    public partial class PluginUI : Form
+    public partial class PluginForm : Form
     {
         private NoIntroLBProcessor Processor;
 
-        public PluginUI()
+        public PluginForm()
         {
             InitializeComponent();
         }
@@ -129,6 +129,12 @@ namespace Pamput.NoIntroLBPlugin
             });
 
             form.Show(this);
+        }
+
+        private void datsFolderButton_Click(object sender, EventArgs e)
+        {
+            openDATFileDialog.ShowDialog();
+            var datFile = DatHelper.ImportDat(openDATFileDialog.FileName, "Super Nintendo Entertainment System");
         }
     }
 }

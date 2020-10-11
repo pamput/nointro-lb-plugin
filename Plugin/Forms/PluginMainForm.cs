@@ -23,20 +23,19 @@ namespace Pamput.NoIntroLBPlugin
             LoadImportedPlatforms();
         }
 
-        
-
-        private void processButton_Click(object sender, EventArgs e)
+        private void processSelectedPlatformsButton_Click(object sender, EventArgs e)
         {
             var selectedPlatform = platformToProcessSelectBox.SelectedItem;
 
             if (selectedPlatform == null)
             {
-                MessageBox.Show("Please select a platform to process", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a platform to process", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
             var platform = selectedPlatform.ToString();
-            
+
             Progress<ProcessProgress> progress = new Progress<ProcessProgress>();
             ProcessProgressForm form = new ProcessProgressForm(progress);
             NoIntroLBProcessor processor = new NoIntroLBProcessor(platform, DatHelper.GetPlatformDatFile(platform));
@@ -58,8 +57,12 @@ namespace Pamput.NoIntroLBPlugin
             }
 
             openDATFileDialog.ShowDialog();
+
+            if (openDATFileDialog.FileName == null) return;
+            
             DatHelper.ImportDat(openDATFileDialog.FileName, selectedPlatform.ToString());
             LoadImportedPlatforms();
         }
+
     }
 }

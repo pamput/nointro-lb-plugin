@@ -11,7 +11,7 @@ namespace Pamput.NoIntroLBPlugin
 {
     public class NoIntroLBPlugin : ISystemMenuItemPlugin
     {
-        public string Caption { get; } = "Test";
+        public string Caption { get; } = "No-Intro P/C Process";
 
         public System.Drawing.Image IconImage { get; } = null;
 

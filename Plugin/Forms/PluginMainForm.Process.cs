@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Unbroken.LaunchBox.Plugins;
 
@@ -7,14 +8,25 @@ namespace Pamput.NoIntroLBPlugin
     {
         private void LoadPlatforms()
         {
-            importPlatformComboBox.Items
-                .AddRange(PluginHelper.DataManager.GetAllPlatforms().Select(p => p.Name)
-                    .ToArray());
+            var platforms = PluginHelper
+                .DataManager
+                .GetAllPlatforms()
+                .Select(p => p.Name)
+                .ToArray();
+            
+            Array.Sort(platforms);
+            
+            importPlatformComboBox.Items.Clear();
+            importPlatformComboBox.Items.AddRange(platforms);
         }
 
         private void LoadImportedPlatforms()
         {
-            platformToProcessSelectBox.Items.AddRange(DatHelper.GetImportedPlatforms());
+            var platforms = DatHelper.GetImportedPlatforms();
+            Array.Sort(platforms);
+            
+            platformToProcessSelectBox.Items.Clear();
+            platformToProcessSelectBox.Items.AddRange(platforms);
         }
         
     }

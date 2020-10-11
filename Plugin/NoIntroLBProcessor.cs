@@ -40,7 +40,12 @@ namespace Pamput.NoIntroLBPlugin
             foreach (XmlNode game in gameList)
             {
                 NameToNoIntroMap.Add(game.Attributes["name"].Value, game);
-                Md5ToNoIntroMap.Add(game.SelectSingleNode("./rom").Attributes["md5"].Value, game);
+
+                if (game.SelectSingleNode("./rom") != null)
+                {
+                    Md5ToNoIntroMap.Add(game.SelectSingleNode("./rom").Attributes["md5"].Value, game);
+                }
+
             }
         }
 
@@ -68,13 +73,15 @@ namespace Pamput.NoIntroLBPlugin
             foreach (IGame game in games)
             {
                 string path = game.ApplicationPath;
+                string name = Path.GetFileNameWithoutExtension(path);
+                
                 state.CurrentGame = path;
 
                 try
                 {
                     string md5 = RomIOHelper.GetMD5(path);
 
-                    XmlNode niGame = Md5ToNoIntroMap[md5];
+                    XmlNode niGame = Md5ToNoIntroMap[md5] ?? NameToNoIntroMap[name];
 
                     if (niGame == null)
                     {

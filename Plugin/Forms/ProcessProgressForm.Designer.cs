@@ -51,7 +51,7 @@ namespace Pamput.NoIntroLBPlugin
             // currentGameLabel
             // 
             this.currentGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.currentGameLabel.Location = new System.Drawing.Point(12, 90);
+            this.currentGameLabel.Location = new System.Drawing.Point(12, 69);
             this.currentGameLabel.Name = "currentGameLabel";
             this.currentGameLabel.Size = new System.Drawing.Size(81, 23);
             this.currentGameLabel.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace Pamput.NoIntroLBPlugin
             // currentGame
             // 
             this.currentGame.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.currentGame.Location = new System.Drawing.Point(78, 90);
+            this.currentGame.Location = new System.Drawing.Point(78, 69);
             this.currentGame.Name = "currentGame";
             this.currentGame.Size = new System.Drawing.Size(523, 23);
             this.currentGame.TabIndex = 15;

@@ -41,10 +41,6 @@
             this.processGamesGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // openDATFileDialog
-            // 
-            this.openDATFileDialog.FileName = "games.dat";
-            // 
             // openRomForMD5Dialog
             // 
             this.openRomForMD5Dialog.FileName = "openFileDialog1";
@@ -58,6 +54,7 @@
             this.processSelectedPlatformsButton.TabIndex = 7;
             this.processSelectedPlatformsButton.Text = "Process selected platform";
             this.processSelectedPlatformsButton.UseVisualStyleBackColor = true;
+            this.processSelectedPlatformsButton.Click += new System.EventHandler(this.processSelectedPlatformsButton_Click);
             // 
             // importPlatformComboBox
             // 
